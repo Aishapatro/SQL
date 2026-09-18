@@ -1,0 +1,22 @@
+select * from dataset_1 d;
+select weather,temperature from dataset_1 d ;
+select * from dataset_1 d  LIMIT 10;
+select DISTINCT passanger from dataset_1 d ;
+select * from dataset_1 d  WHERE destination='Home';
+select * from dataset_1 d ORDER BY coupon ;
+select destination as Destination FROM dataset_1 d ;
+select occupation FROM dataset_1 d  GROUP BY occupation;
+select weather,AVG(temperature)as avg_temp FROM dataset_1 d GROUP BY weather;
+select weather,COUNT(temperature)AS count_temp FROM dataset_1 d GROUP BY weather; 
+select weather,COUNT(DISTINCT temperature)AS count_distinct_temp FROM dataset_1 d GROUP BY weather ;
+select weather,SUM(temperature) AS sum_temp FROM dataset_1 d GROUP BY weather;
+select weather,MIN(temperature)AS min_temp FROM dataset_1 d GROUP BY weather ;
+select weather,MAX(temperature)AS max_temp FROM dataset_1 d GROUP BY weather ;
+select occupation FROM dataset_1 d GROUP BY occupation HAVING occupation='Student';
+select DISTINCT destination FROM(SELECT * FROM dataset_1 UNION SELECT * FROM table_to_union);
+select a.destination,a.time,b.part_of_day FROM dataset_1 a INNER JOIN table_to_join b ON  
+a.time=b.time ;
+select destination,passanger FROM(SELECT * FROM dataset_1 d WHERE passanger='Alone');
+select * from dataset_1 d WHERE weather LIKE 'Sun%';
+select DISTINCT temperature FROM dataset_1 d WHERE temperature BETWEEN 29 AND 75;
+select occupation FROM dataset_1 WHERE occupation IN('Sales & Related','Management');
